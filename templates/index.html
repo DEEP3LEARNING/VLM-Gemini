@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频摘要与测验生成器</title>
+    <!-- 引入 CSS 文件 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>上传视频以生成摘要和测验</h1>
+
+    <!-- 文件上传表单 -->
+    <form id="upload-form" enctype="multipart/form-data">
+        <label for="video-file">选择一个视频文件:</label>
+        <!-- accept="video/*" 限制用户只能选择视频文件 -->
+        <input type="file" id="video-file" name="videoFile" accept="video/*" required>
+        <br><br>
+        <button type="submit" id="submit-button">处理视频</button>
+    </form>
+
+    <!-- 加载指示器 -->
+    <div id="loading" style="display: none;">
+        <p>正在处理视频，请稍候... 这可能需要一些时间。</p>
+        <!-- 可以添加一个旋转图标等视觉元素 -->
+        <div class="spinner"></div>
+    </div>
+
+    <!-- 显示结果的区域 -->
+    <div id="results" style="display: none;"> <!-- 初始隐藏 -->
+        <h2>处理结果:</h2>
+        <!-- 使用 <pre> 标签可以保留换行和空格 -->
+        <pre id="output-text">您的视频摘要和测验将显示在这里。</pre>
+    </div>
+
+    <!-- 引入 JavaScript 文件 -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

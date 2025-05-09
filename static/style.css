@@ -1,0 +1,101 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 2em;
+    line-height: 1.6;
+    background-color: #f4f7f9;
+    color: #333;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.3em;
+}
+
+#upload-form {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    border: 1px solid #d1d9e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    color: #555;
+}
+
+input[type="file"] {
+    margin-bottom: 1.5em;
+    display: block;
+    color: #555;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+
+button:disabled {
+    background-color: #a0c4e4;
+    cursor: not-allowed;
+}
+
+#loading {
+    text-align: center;
+    padding: 1em 0;
+}
+
+#loading p {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+/* 简单的 CSS 加载动画 */
+.spinner {
+    margin: 10px auto;
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#results {
+    margin-top: 2em;
+    border: 1px solid #d1d9e0;
+    padding: 1.5em;
+    background-color: #eaf2f8;
+    border-radius: 8px;
+}
+
+#output-text {
+    white-space: pre-wrap;       /* 保留换行和空格，并自动换行 */
+    word-wrap: break-word;      /* 在长单词或 URL 处断行 */
+    font-family: "Courier New", Courier, monospace; /* 等宽字体，适合代码或格式化文本 */
+    background-color: #ffffff;
+    padding: 1em;
+    border: 1px solid #d1d9e0;
+    border-radius: 4px;
+    min-height: 100px; /* 给结果区域一个最小高度 */
+    overflow-x: auto; /* 如果内容过长，允许水平滚动 */
+}
